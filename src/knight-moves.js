@@ -5,6 +5,9 @@ export function knightMoves(start, end){
   if (start === end) {
     return start;
   }
+  if(!board[start[0]][start[1]] || !board[end[0]][end[1]]){
+    return "Error: select spaces on the chess board"
+  }
   let queue = [];
   let visited = [];
   let root = board[start[0]][start[1]]
