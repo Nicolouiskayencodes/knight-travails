@@ -1,4 +1,4 @@
-export default function Node(coordinates){
+export function Node(coordinates){
   let obj = {};
   let i = coordinates[0];
   let j = coordinates[1];
@@ -38,3 +38,16 @@ export default function Node(coordinates){
   }
   return obj;
  }
+
+ export default function createBoard(){
+  let board = [];
+  for (let i=0; i<8; i++){
+    let row = [];
+    for (let j=0;j<8; j++){
+      let space = Node([i,j])
+      row.push(space);
+    }
+    board.push(row);
+  }
+  return board;
+}
